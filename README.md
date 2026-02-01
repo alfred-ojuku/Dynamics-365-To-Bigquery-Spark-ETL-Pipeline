@@ -11,7 +11,6 @@ You need to have Java, Python  installed, please look at Apache spark dependenci
 
 # Usage
 The code can run on a cluster or locally, but you need to first edit source and sik dependencies; google cloud storage and google bigquery. The ETL pipeline in our case works like this
-- Create a dataproc cluster using the terraform template. (We have not switched to dataproc serverless because of costs incurred in serverless dataproc.)
-- Submit the pyspark ETL pipeline with the corresponding helper functions using this command ```gcloud dataproc jobs submit pyspark --cluster=<name of cluster> --region=<region> gs://<path>/incremental_etl_v1.py  --py-files=gs://<path>/helper_functions.py```
-- After the pipeline runs and finishes, destroy the cluster. All these are in the run_etl.sh script and sits in a linux vm in google cloud. The run_etl.sh script is scheduled using a cron job to run every midnight. Here is the command used to destroy the cluster ```gcloud dataproc clusters delete <name of cluster> --region=<region> --quiet```
-
+- Create a dataproc cluster using the terraform template. (We have not switched to dataproc serverless because of costs incurred in serverless dataproc.) See the command in the run_etl.sh.
+- Submit the pyspark ETL pipeline with the corresponding helper function.
+- After the pipeline runs and finishes, destroy the cluster. All these are in the run_etl.sh script and sits in a linux vm in google cloud. The run_etl.sh script is scheduled using a cron job to run every midnight.
