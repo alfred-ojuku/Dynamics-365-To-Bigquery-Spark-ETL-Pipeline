@@ -195,10 +195,10 @@ for folder in folders:
             continue
             
     else:
-         create_new_table(spark, folder, bc2adls_bucket)
+         create_new_table(spark, folder, bc2adls_bucket, temp_bucket, project, dataset)
 
 #update latest.csv
 if len_sys_args <= 1:
-    update_latest_csv(client, spark, folders, bc2adls_bucket)
+    update_latest_csv(client, spark, folders, bc2adls_bucket, path)
     
 spark.stop()
