@@ -1,8 +1,8 @@
 # Dynamics-To-Bigquery-ETL-Spark-Pipeline
-This spark ETL code reads exported data from dynamics 365 in google cloud storage, processes it and load it into bigquery for Analytics
+This spark ETL code reads exported data from dynamics 365 in google cloud storage, processes it and loads it into bigquery for analytics
 
 # Initial set up
-Set up [bc2adls](https://github.com/microsoft/bc2adls) as explain in the link. For my use case, we used Google cloud platform as our cloud provider, the processing was done mainly in dataproc. We had to figure out a way of processing the delta files from dynamics 365 without using synapse hence this spark pipeline. Because of this we setup the export functionality of bc2adls to azure data lake, transfered the csv's into google cloud storage and did our own processing with spark from there onwards.
+Set up [bc2adls](https://github.com/microsoft/bc2adls) as explained in the link. For my use case, I used Google cloud platform as our cloud provider, the processing was done mainly in dataproc. We had to figure out a way of processing the delta files from dynamics 365 without using synapse hence this spark pipeline. Because of this we setup the export functionality of bc2adls to azure data lake, transfered the csv's into google cloud storage and did our own processing with spark from there onwards.
 
 Disclaimer: bc2adls as a tool can do the export and data processing writing the results into a azure data lake storage, please read the documentation linked above.
 
